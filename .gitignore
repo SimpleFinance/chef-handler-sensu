@@ -1,3 +1,4 @@
 *.swp
 Berksfile.lock
 .vagrant
+*.gem

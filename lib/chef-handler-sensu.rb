@@ -39,8 +39,9 @@ class SensuCleaner < Chef::Handler
   end
 
   def report
+    checks = all_checks
     Dir[::File.join(node[:sensu][:directory], 'conf.d', 'checks', '*')].reject do |file|
-      all_checks.include?(::File.basename(file, '.json'))
+      checks.include?(::File.basename(file, '.json'))
     end.each do |file|
       Chef::Log.warn "No sensu_check resources found for '#{::File.basename(file, '.json')}', deleting!"
       FileUtils.rm(file)

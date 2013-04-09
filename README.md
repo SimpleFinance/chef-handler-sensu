@@ -26,6 +26,10 @@ of your cookbook as well.
 
 [1] http://docs.opscode.com/essentials_handlers_install.html
 
+## License
+
+Apache License, Version 2.0
+
 ## Author
 
 Simple Finance <ops@simple.com>

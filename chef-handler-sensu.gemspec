@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'chef-handler-sensu'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.author = 'Simple Finance'
   s.email = 'ops@simple.com'
   s.homepage = 'http://github.com/SimpleFinance/chef-handler-sensu'

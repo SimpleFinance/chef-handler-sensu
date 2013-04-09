@@ -22,7 +22,19 @@ end
 ```
 
 Obviously make sure to copy the ruby file into the `/files/default` directory
-of your cookbook as well.
+of your cookbook as well. Alternatively, install it as a Rubygem and source it that way:
+
+```ruby
+chef_gem 'chef-handler-sensu' do
+  action :install
+end
+
+chef_handler 'SensuCleaner' do
+  source ::File.join(Gem.all_load_paths.grep(/chef-handler-sensu/).first,
+                     'chef-handler-sensu.rb')
+  action :enable
+end
+```
 
 [1] http://docs.opscode.com/essentials_handlers_install.html
 

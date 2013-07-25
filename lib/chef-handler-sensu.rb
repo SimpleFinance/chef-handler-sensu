@@ -39,6 +39,7 @@ class SensuCleaner < Chef::Handler
   end
 
   def report
+    if run_status.fail? then return end
     checks = all_checks
     Dir[::File.join(node[:sensu][:directory], 'conf.d', 'checks', '*')].reject do |file|
       checks.include?(::File.basename(file, '.json'))
